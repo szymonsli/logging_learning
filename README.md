@@ -11,6 +11,7 @@ $ python simple_calculator.py
 
 If nothing was changed in `simple_calculator.py` script, you should see the following result:
 ```.env
+INFO - simple_calculator::__init__  - The current number is 4
 DEBUG - simple_calculator::add  - Added 2. The result is 6
 DEBUG - simple_calculator::divide  - Divided by 3. The result is 2.0
 DEBUG - simple_calculator::subtract  - Subtracted 1. The result is 1.0
