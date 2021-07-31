@@ -2,6 +2,8 @@ import logging
 import os
 
 log_number = 0
+if not os.path.exists("logs"):
+    os.mkdir("logs")
 while os.path.exists(f"logs/logger_{log_number}.log"):
     log_number += 1
 
