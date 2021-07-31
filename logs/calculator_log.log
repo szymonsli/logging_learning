@@ -1,5 +1,0 @@
-30-07-2021 22:42:55 - INFO - simple_calculator::__init__ - The current number is 4
-30-07-2021 22:42:55 - DEBUG - simple_calculator::add - The current number is 6
-30-07-2021 22:42:55 - CRITICAL - simple_calculator::divide - The current number is 2.0
-30-07-2021 22:42:55 - WARNING - simple_calculator::subtract - The current number is 0.0
-30-07-2021 22:42:55 - ERROR - simple_calculator::multiply - The current number is 0.0

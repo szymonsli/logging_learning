@@ -1,38 +1,38 @@
-import logging
-
-logging.basicConfig(
-    level=logging.DEBUG,
-    filename="logs/calculator_log.log",
-    filemode="a",
-    format="""%(asctime)s - %(levelname)s - %(module)s::%(funcName)s - %(message)s""",
-    datefmt="%d-%m-%Y %H:%M:%S"
-)
+from logger import logger
 
 
 class Calculator:
     def __init__(self, first_number):
-        self.current_number = first_number
-        logging.info(f"The current number is {self.current_number}")
+        self.input_number = first_number
+        self.result = self.input_number
+        logger.info(f"The current number is {self.result}")
 
     def add(self, number):
-        self.current_number += number
-        logging.debug(f"The current number is {self.current_number}")
+        self.result += number
+        logger.debug(f"Added {number}. The result is {self.result}")
 
     def subtract(self, number):
-        self.current_number -= number
-        logging.warning(f"The current number is {self.current_number}")
+        self.result -= number
+        logger.debug(f"Subtracted {number}. The result is {self.result}")
 
     def multiply(self, number):
-        self.current_number *= number
-        logging.error(f"The current number is {self.current_number}")
+        self.result *= number
+        logger.debug(f"Multiplied by {number}. The result is {self.result}")
 
     def divide(self, number):
-        self.current_number /= number
-        logging.critical(f"The current number is {self.current_number}")
+        try:
+            self.result /= number
+        except ZeroDivisionError:
+            logger.error("Tried to divide by 0. Skipped operation.")
+        else:
+            logger.debug(f"Divided by {number}. The result is {self.result}")
 
 
 c1 = Calculator(4)
 c1.add(2)
 c1.divide(3)
-c1.subtract(2)
+c1.subtract(1)
 c1.multiply(5)
+c1.divide(2)
+c1.divide(0)
+c1.add(13)
